@@ -121,6 +121,14 @@ It is weaker for:
 - Generated implementation is a first-pass scaffold, not a final clone
 - Complex visual systems still require deeper extraction and manual refinement
 
+## Status
+
+Current state:
+
+- usable for structured analysis and scaffold generation
+- resilient when browser automation is unavailable
+- still limited by the current Playwright host setup for screenshot-rich runs
+
 ## Roadmap
 
 Planned upgrades:
