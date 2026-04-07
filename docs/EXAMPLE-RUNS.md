@@ -2,12 +2,21 @@
 
 ## Vercel AI demo
 
-A representative public demo run was generated against:
+A representative public demo was generated against:
 
 - URL: `https://vercel.com/ai`
+
+Two run variants now exist:
+
+### 1. Fallback-safe run
 - Run slug: `vercel-ai-demo`
 - Result: analysis package + first-pass implementation scaffold
 - Capture mode: `http-fallback`
+
+### 2. Browser-backed run
+- Run slug: `vercel-ai-demo-browser`
+- Result: analysis package + screenshot + first-pass implementation scaffold
+- Capture mode: `browser`
 
 ### Observed output
 
@@ -37,4 +46,4 @@ This is a better showcase than `example.com` because it resembles a modern publi
 
 ### Current caveat
 
-This run was produced in fallback mode because browser capture is still blocked by missing Playwright host libraries in the current container.
+The browser-backed path is working now, but the project still keeps the fallback-safe path because browser dependencies can break again in new environments.

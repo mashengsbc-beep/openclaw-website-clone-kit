@@ -7,7 +7,9 @@ Full browser capture for this skill depends on both:
 
 ## Current state in this environment
 
-The Chromium binaries were installed, but browser launch still fails because the container is missing required shared libraries such as:
+Browser launch is currently working in this environment after installing the required shared libraries.
+
+The main recovery lesson is that Chromium binaries alone are not enough; the container must also provide shared libraries such as:
 
 - `libnspr4`
 - `libnss3`
@@ -30,9 +32,9 @@ A prepared fix script exists at:
 
 It installs the required Debian packages and then reinstalls Chromium for the existing browser-lab workspace.
 
-## After fixing
+## Validation command
 
-Re-run:
+After fixing, validate with:
 
 ```bash
 node /home/node/OpenClawBox/skills/openclaw-website-clone-kit/scripts/run-complete.js \
@@ -40,4 +42,4 @@ node /home/node/OpenClawBox/skills/openclaw-website-clone-kit/scripts/run-comple
   --slug vercel-ai-demo-browser
 ```
 
-At that point the run should produce richer inspection artifacts, including screenshots.
+A healthy run should produce richer inspection artifacts, including screenshots.

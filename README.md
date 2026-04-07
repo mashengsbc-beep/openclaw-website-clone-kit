@@ -79,9 +79,15 @@ When browser capture is healthy, runs can also include screenshots and richer in
 
 A more realistic public demo run was generated against `https://vercel.com/ai`.
 
-That run produced:
+That run now has two useful states:
+
+- `vercel-ai-demo` — fallback-safe run
+- `vercel-ai-demo-browser` — browser-backed run with screenshot capture
+
+The browser-backed run produced:
 
 - inspection metadata
+- screenshot capture
 - rebuild spec
 - first-pass implementation scaffold
 - structured content data for follow-up iteration
@@ -129,14 +135,14 @@ It is weaker for:
 
 ## Browser setup
 
-Full screenshot-rich inspection still depends on Playwright host libraries being present in the container.
+Browser inspection is now working in this environment after completing the Playwright host dependency setup.
 
-See `docs/BROWSER-SETUP.md` for the current state and one-shot fix path.
+See `docs/BROWSER-SETUP.md` for the dependency notes and recovery path if the browser stack breaks again.
 
 ## Current limitations
 
-- Full browser capture still depends on a healthy Playwright + system library setup
-- Without browser capture, screenshots and interaction behavior are unavailable
+- Browser capture depends on a healthy Playwright + system library setup
+- If the browser stack breaks again, the workflow still falls back to HTTP-based analysis
 - Generated implementation is a first-pass scaffold, not a final clone
 - Complex visual systems still require deeper extraction and manual refinement
 
@@ -145,8 +151,8 @@ See `docs/BROWSER-SETUP.md` for the current state and one-shot fix path.
 Current state:
 
 - usable for structured analysis and scaffold generation
-- resilient when browser automation is unavailable
-- still limited by the current Playwright host setup for screenshot-rich runs
+- browser-backed inspection is working again in this environment
+- resilient even if browser automation becomes unavailable again
 
 ## Roadmap
 
