@@ -75,6 +75,19 @@ deliveries/website-clone-runs/<slug>/
 
 When browser capture is healthy, runs can also include screenshots and richer inspection artifacts.
 
+## Example run
+
+A more realistic public demo run was generated against `https://vercel.com/ai`.
+
+That run produced:
+
+- inspection metadata
+- rebuild spec
+- first-pass implementation scaffold
+- structured content data for follow-up iteration
+
+See `docs/EXAMPLE-RUNS.md` for details.
+
 ## Included scripts
 
 - `scripts/run-complete.js` — one-command entry point for analysis + scaffold generation
@@ -113,6 +126,12 @@ It is weaker for:
 - animation-heavy experiences
 - pages that depend on deep client-side behavior
 - pixel-perfect cloning without working browser inspection
+
+## Browser setup
+
+Full screenshot-rich inspection still depends on Playwright host libraries being present in the container.
+
+See `docs/BROWSER-SETUP.md` for the current state and one-shot fix path.
 
 ## Current limitations
 
